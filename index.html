@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacha Consultora</title>
+    <!-- Tailwind CSS (Framework de diseño) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat para ese look moderno y geométrico -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Animación suave para el botón de scroll */
+        .bounce-arrow {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="h-screen w-full overflow-hidden relative bg-blue-400">
+
+    <!-- IMAGEN DE FONDO -->
+    <!-- Usamos una imagen real de Unsplash que coincida con el estilo (cielo azul, casa blanca) -->
+    <div class="absolute inset-0 z-0">
+        <img src="assets/img/background.jpg" 
+             alt=" Home Background" 
+             class="w-full h-full object-cover object-center brightness-[0.85]">
+        <!-- Degradado sutil para mejorar la lectura del texto blanco -->
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-black/40"></div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="relative z-10 h-full flex flex-col justify-between p-4 md:p-8">
+
+        <!-- 1. BARRA DE NAVEGACIÓN (Estilo Cápsula Flotante) -->
+        <nav class="bg-white rounded-full px-6 py-3 flex justify-between items-center shadow-lg max-w-[1400px] w-full mx-auto">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-black rounded-sm"></div> <!-- Cuadrado negro del logo -->
+                <span class="font-bold text-lg tracking-widest text-black">PACHA</span>
+            </div>
+
+            <!-- Enlaces (Ocultos en móvil, visibles en escritorio) -->
+            <div class="hidden md:flex gap-8">
+                <a href="#" class="text-xs font-bold text-gray-800 hover:text-blue-600 tracking-wide transition">Inicio</a>
+                <a href="#" class="text-xs font-bold text-gray-500 hover:text-blue-600 tracking-wide transition">Asesoría gratuita<area shape="" coords="" href="" alt=""></a>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex items-center gap-3">
+                <button class="bg-black text-white text-xs font-bold px-6 py-2.5 rounded-full hover:bg-gray-800 transition">
+                   Whatsapp
+                </button>
+            </div>
+        </nav>
+
+        <!-- 2. CONTENIDO HÉROE (Texto Central) -->
+        <main class="flex-grow flex flex-col justify-center max-w-[1400px] mx-auto w-full px-4 md:px-12 mt-10 md:mt-0">
+            
+            <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-medium uppercase leading-tight tracking-tight drop-shadow-md">
+                Te acompañamos a resolver<br>
+                <span class="font-normal text-white/90">conflictos en tierras</span>
+            </h1>
+
+            <!-- Botón Explore Listings -->
+            <div class="mt-12">
+                <button class="group bg-transparent border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition duration-300 flex items-center gap-3 backdrop-blur-sm">
+                    <span class="text-xs font-bold tracking-widest uppercase">Más Información</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+        </main>
+
+        <!-- 3. PIE DE PÁGINA (Información inferior) -->
+        <footer class="max-w-[1400px] mx-auto w-full px-4 md:px-12 pb-4 flex flex-col md:flex-row justify-between items-end md:items-center text-white gap-6">
+            
+            <!-- Texto descriptivo izquierda -->
+            <div class="max-w-md text-xs md:text-sm text-gray-200 leading-relaxed font-light tracking-wide border-l-2 border-white/30 pl-4">
+                Te brindamos consultoria gratuita para resolver conflictos en tierras y te acompañamos en cada pasa para recuperar tu propiedad. 
+            </div>
+
+            <!-- Indicador Scroll Down derecha -->
+            <div class="flex items-center gap-4 cursor-pointer hover:opacity-80 transition">
+                <span class="text-xs font-bold tracking-widest uppercase">Llamar</span>
+                <div class="w-10 h-10 rounded-full border border-white/50 flex items-center justify-center bounce-arrow bg-white/10 backdrop-blur-md">
+                    
+                    <i class="font-awesome phone text-sm"></i>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Script simple para interactividad básica -->
+    <script>
+        // Simplemente para dar feedback al clickear botones
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const originalText = btn.innerText;
+                // Efecto visual simple
+                btn.style.transform = "scale(0.95)";
+                setTimeout(() => {
+                    btn.style.transform = "scale(1)";
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
